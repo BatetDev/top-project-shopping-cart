@@ -1,8 +1,6 @@
-import { createContext, useReducer } from 'react';
+export const initialState = [];
 
-const initialState = [];
-
-function cartReducer(state, action) {
+export function cartReducer(state, action) {
   switch (action.type) {
     case 'ADD_ITEM': {
       const existing = state.find(
