@@ -53,8 +53,16 @@ function cartReducer(state, action) {
       );
     }
 
-    case 'DECREASE_QUANTITY':
-      return state;
+    case 'DECREASE_QUANTITY': {
+      return state.map((item) =>
+        item.id === action.payload
+          ? {
+              ...item,
+              quantity: Math.max(item.quantity - 1, 1),
+            }
+          : item,
+      );
+    }
 
     case 'CLEAR_CART':
       return [];
