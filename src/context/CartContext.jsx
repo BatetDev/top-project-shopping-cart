@@ -4,7 +4,7 @@ const initialState = [];
 
 function cartReducer(state, action) {
   switch (action.type) {
-    case 'ADD_ITEM':
+    case 'ADD_ITEM': {
       const existing = state.find(
         (item) => item.id === action.payload.product.id,
       );
@@ -21,25 +21,22 @@ function cartReducer(state, action) {
             : item,
         );
         return updated;
-      } else {
-        const { id, title, price, thumbnail, stock } = action.payload.product;
-
-        const added = [
-          ...state,
-          {
-            id,
-            title,
-            price,
-            thumbnail,
-            stock,
-            quantity: Math.min(
-              action.payload.quantity,
-              action.payload.product.stock,
-            ),
-          },
-        ];
-        return added;
       }
+      const { id, title, price, thumbnail, stock } = action.payload.product;
+
+      const added = [
+        ...state,
+        {
+          id,
+          title,
+          price,
+          thumbnail,
+          stock,
+          quantity: Math.min(action.payload.quantity, stock),
+        },
+      ];
+      return added;
+    }
 
     case 'REMOVE_ITEM':
       return state;
