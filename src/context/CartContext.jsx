@@ -64,8 +64,9 @@ function cartReducer(state, action) {
       );
     }
 
-    case 'CLEAR_CART':
+    case 'CLEAR_CART': {
       return [];
+    }
 
     default:
       return state;
