@@ -42,8 +42,16 @@ function cartReducer(state, action) {
       return state.filter((item) => item.id !== action.payload);
     }
 
-    case 'INCREASE_QUANTITY':
-      return;
+    case 'INCREASE_QUANTITY': {
+      return state.map((item) =>
+        item.id === action.payload
+          ? {
+              ...item,
+              quantity: Math.min(item.quantity + 1, item.stock),
+            }
+          : item,
+      );
+    }
 
     case 'DECREASE_QUANTITY':
       return state;
