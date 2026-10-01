@@ -38,11 +38,12 @@ function cartReducer(state, action) {
       return added;
     }
 
-    case 'REMOVE_ITEM':
-      return state;
+    case 'REMOVE_ITEM': {
+      return state.filter((item) => item.id !== action.payload);
+    }
 
     case 'INCREASE_QUANTITY':
-      return state;
+      return;
 
     case 'DECREASE_QUANTITY':
       return state;
