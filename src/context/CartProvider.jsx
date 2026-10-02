@@ -17,7 +17,7 @@ function loadCart() {
 }
 
 export function CartProvider({ children }) {
-  const [cartItems, dispatch] = useReducer(cartReducer, loadCart());
+  const [cartItems, dispatch] = useReducer(cartReducer, undefined, loadCart);
 
   const value = { cartItems, dispatch };
 
