@@ -1,5 +1,3 @@
-export const initialState = [];
-
 export function cartReducer(state, action) {
   switch (action.type) {
     case 'ADD_ITEM': {
