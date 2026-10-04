@@ -1,5 +1,6 @@
 import { useCart } from '../context/useCart';
 import CartItem from '../components/CartItem';
+import { Link } from 'react-router-dom';
 
 export default function CartPage() {
   const { cartItems, dispatch } = useCart();
@@ -9,6 +10,7 @@ export default function CartPage() {
       <main>
         <h1>Cart</h1>
         <p>Your cart is empty.</p>
+        <Link to='/shop'>Continue shopping</Link>
       </main>
     );
   }
@@ -32,6 +34,7 @@ export default function CartPage() {
       <button type='button' onClick={() => dispatch({ type: 'CLEAR_CART' })}>
         Clear Cart
       </button>
+      <Link to='/shop'>Continue shopping</Link>
     </main>
   );
 }
