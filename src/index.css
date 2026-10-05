@@ -8,4 +8,14 @@ body {
   min-height: 100svh;
   color: #1f1f1f;
   background-color: #faf7f2;
+  font-family: 'Inter', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Marcellus', serif;
 }
