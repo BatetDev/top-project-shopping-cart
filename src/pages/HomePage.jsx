@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
+import styles from './HomePage.module.css';
 
 export default function HomePage() {
   return (
     <main>
-      <section className='hero'>
+      <section className={styles.hero}>
         <h1>Lakon Tech</h1>
         <Link to='/shop?category=smartphones'>
           <img
@@ -18,9 +19,9 @@ export default function HomePage() {
           />
         </Link>
       </section>
-      <section className='intro'>
+      <section className={styles.intro}>
         <p>Curated Tech for the Modern Minimalist.</p>
-        <Link to='/shop' className='cta'>
+        <Link to='/shop' className={styles.cta}>
           Shop Now
         </Link>
       </section>
