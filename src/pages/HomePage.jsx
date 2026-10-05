@@ -5,7 +5,6 @@ export default function HomePage() {
   return (
     <main>
       <section className={styles.hero}>
-        <h1>Lakon Tech</h1>
         <Link to='/shop?category=smartphones'>
           <img
             src='https://images.unsplash.com/photo-1568909039591-91857e3f46d1?auto=format&fit=crop&w=800&q=80'
@@ -20,7 +19,7 @@ export default function HomePage() {
         </Link>
       </section>
       <section className={styles.intro}>
-        <p>Curated Tech for the Modern Minimalist.</p>
+        <h1>Curated Tech for the Modern Minimalist.</h1>
         <Link to='/shop' className={styles.cta}>
           Shop Now
         </Link>
