@@ -15,12 +15,10 @@
 }
 
 .brand {
-  font-family: 'Marcellus', serif;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.15rem;
-  text-shadow:
-    0.5px 0 currentColor,
-    -0.5px 0 currentColor;
 }
 
 .brand:hover {
