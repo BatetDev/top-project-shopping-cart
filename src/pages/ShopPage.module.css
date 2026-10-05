@@ -1,0 +1,20 @@
+.shopPage {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.shopPage h1 {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #1f1f1f;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  margin: 0 0 2rem;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}

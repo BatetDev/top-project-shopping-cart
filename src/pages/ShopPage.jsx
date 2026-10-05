@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { fetchJSON } from '../utils/fetchJSON';
 import { useCart } from '../context/useCart';
 import ProductCard from '../components/ProductCard';
+import styles from './ShopPage.module.css';
 
 const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
@@ -51,15 +52,17 @@ function ShopPage() {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <main>
+    <main className={styles.shopPage}>
       <h1>Shop</h1>
-      {products.map((product) => (
-        <ProductCard
-          key={product.id}
-          product={product}
-          onAddToCart={handleAddToCart}
-        />
-      ))}
+      <div className={styles.productGrid}>
+        {products.map((product) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+            onAddToCart={handleAddToCart}
+          />
+        ))}
+      </div>
     </main>
   );
 }
