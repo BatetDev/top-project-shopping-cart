@@ -13,12 +13,12 @@ function ShopPage() {
 
   const { dispatch } = useCart();
 
-  const handleAddToCart = (product, quantity) => {
+  const handleAddToCart = (product) => {
     dispatch({
       type: 'ADD_ITEM',
       payload: {
         product,
-        quantity,
+        quantity: 1,
       },
     });
   };
