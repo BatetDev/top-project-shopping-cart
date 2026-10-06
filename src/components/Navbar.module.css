@@ -1,4 +1,8 @@
 .navBar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #faf7f2;
   display: flex;
   justify-content: space-between;
   align-items: center;
