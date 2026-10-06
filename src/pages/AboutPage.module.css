@@ -1,0 +1,25 @@
+.about {
+  padding: 4rem 2rem;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.about h1 {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #1f1f1f;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  margin: 0 0 2rem;
+}
+
+.about p {
+  color: #1f1f1f;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin: 0 0 1.5rem;
+}
+
+.about p:last-child {
+  margin-bottom: 0;
+}

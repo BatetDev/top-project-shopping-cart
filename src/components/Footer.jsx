@@ -41,6 +41,14 @@ export default function Footer() {
         ))}
       </ul>
 
+      <div className={styles.bottom}>
+        <Link to='/about' className={styles.link}>
+          About
+        </Link>
+        <a href='mailto:hello@lakontech.com' className={styles.link}>
+          Contact
+        </a>
+      </div>
       <p className={styles.copyright}>
         © {year} Lakon Tech. All rights reserved.
       </p>

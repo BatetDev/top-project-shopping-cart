@@ -44,3 +44,24 @@
 .socialLink:hover {
   color: #005780;
 }
+
+.bottom {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.link {
+  color: #5c5c5c;
+  text-decoration: none;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid transparent;
+  transition:
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.link:hover {
+  color: #005780;
+  border-bottom-color: #005780;
+}
