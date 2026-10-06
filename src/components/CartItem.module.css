@@ -1,0 +1,97 @@
+.cartItem {
+  display: grid;
+  grid-template-columns: 80px 1fr auto auto auto;
+  align-items: center;
+  gap: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e3ded6;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  display: block;
+  background: #fff;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.title {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #1f1f1f;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.unitPrice {
+  font-size: 0.85rem;
+  color: #5c5c5c;
+  margin: 0;
+}
+
+.quantityControls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid #e3ded6;
+  padding: 0.25rem 0.5rem;
+}
+
+.quantityControls button {
+  background: transparent;
+  border: none;
+  color: #1f1f1f;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.quantityControls button:hover:not(:disabled) {
+  color: #005780;
+}
+
+.quantityControls button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.quantity {
+  min-width: 1.5rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #1f1f1f;
+}
+
+.subtotal {
+  font-size: 0.95rem;
+  color: #1f1f1f;
+  margin: 0;
+  min-width: 5rem;
+  text-align: right;
+}
+
+.removeButton {
+  background: transparent;
+  border: none;
+  color: #5c5c5c;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.removeButton:hover {
+  color: #b3261e;
+}
