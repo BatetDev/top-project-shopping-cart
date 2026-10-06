@@ -11,17 +11,7 @@ function ShopPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const { dispatch } = useCart();
-
-  const handleAddToCart = (product) => {
-    dispatch({
-      type: 'ADD_ITEM',
-      payload: {
-        product,
-        quantity: 1,
-      },
-    });
-  };
+  const { addItem } = useCart();
 
   useEffect(() => {
     async function fetchProducts() {
@@ -59,7 +49,7 @@ function ShopPage() {
           <ProductCard
             key={product.id}
             product={product}
-            onAddToCart={handleAddToCart}
+            onAddToCart={addItem}
           />
         ))}
       </div>

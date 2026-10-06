@@ -4,7 +4,13 @@ import CartItem from '../components/CartItem';
 import styles from './CartPage.module.css';
 
 export default function CartPage() {
-  const { cartItems, dispatch } = useCart();
+  const {
+    cartItems,
+    increaseQuantity,
+    decreaseQuantity,
+    removeItem,
+    clearCart,
+  } = useCart();
 
   if (cartItems.length === 0) {
     return (
@@ -29,13 +35,9 @@ export default function CartPage() {
           <CartItem
             key={item.id}
             item={item}
-            onIncrease={() =>
-              dispatch({ type: 'INCREASE_QUANTITY', payload: item.id })
-            }
-            onDecrease={() =>
-              dispatch({ type: 'DECREASE_QUANTITY', payload: item.id })
-            }
-            onRemove={() => dispatch({ type: 'REMOVE_ITEM', payload: item.id })}
+            onIncrease={() => increaseQuantity(item.id)}
+            onDecrease={() => decreaseQuantity(item.id)}
+            onRemove={() => removeItem(item.id)}
           />
         ))}
       </ul>
@@ -44,7 +46,7 @@ export default function CartPage() {
         <button
           type='button'
           className={styles.clearButton}
-          onClick={() => dispatch({ type: 'CLEAR_CART' })}
+          onClick={clearCart}
         >
           Clear Cart
         </button>
