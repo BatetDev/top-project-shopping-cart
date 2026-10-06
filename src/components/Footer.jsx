@@ -1,0 +1,49 @@
+import { Link } from 'react-router-dom';
+import {
+  FaInstagram,
+  FaFacebookF,
+  FaXTwitter,
+  FaYoutube,
+  FaTiktok,
+} from 'react-icons/fa6';
+import styles from './Footer.module.css';
+
+const socials = [
+  { name: 'Instagram', href: 'https://instagram.com', Icon: FaInstagram },
+  { name: 'Facebook', href: 'https://facebook.com', Icon: FaFacebookF },
+  { name: 'X', href: 'https://x.com', Icon: FaXTwitter },
+  { name: 'YouTube', href: 'https://youtube.com', Icon: FaYoutube },
+  { name: 'TikTok', href: 'https://tiktok.com', Icon: FaTiktok },
+];
+
+export default function Footer() {
+  const year = new Date().getFullYear();
+
+  return (
+    <footer className={styles.footer}>
+      <Link to='/' className={styles.brand}>
+        Lakon Tech
+      </Link>
+
+      <ul className={styles.socials}>
+        {socials.map(({ name, href, Icon }) => (
+          <li key={name}>
+            <a
+              href={href}
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label={name}
+              className={styles.socialLink}
+            >
+              <Icon />
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <p className={styles.copyright}>
+        © {year} Lakon Tech. All rights reserved.
+      </p>
+    </footer>
+  );
+}
