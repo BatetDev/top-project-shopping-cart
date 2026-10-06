@@ -1,0 +1,33 @@
+.notFound {
+  padding: 6rem 2rem;
+  text-align: center;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.notFound h1 {
+  font-size: 4rem;
+  font-weight: 400;
+  color: #1f1f1f;
+  letter-spacing: 0.05em;
+  margin: 0 0 1rem;
+}
+
+.notFound p {
+  color: #5c5c5c;
+  font-size: 1.125rem;
+  margin: 0 0 2rem;
+}
+
+.link {
+  color: #005780;
+  text-decoration: none;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.link:hover {
+  border-bottom-color: #005780;
+}
