@@ -18,7 +18,7 @@ export default function Navbar() {
         <button type='button' className={styles.cartButton} onClick={openCart}>
           Cart
           {totalItems > 0 && (
-            <span className={styles.cartBadge}>({totalItems})</span>
+            <span className={styles.cartBadge}>{totalItems}</span>
           )}
         </button>
       </div>

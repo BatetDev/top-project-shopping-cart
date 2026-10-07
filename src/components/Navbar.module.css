@@ -15,10 +15,26 @@
 }
 
 .cartBadge {
-  margin-left: 0.25rem;
+  position: absolute;
+  top: -0.4rem;
+  right: -1rem;
+  min-width: 1rem;
+  height: 1rem;
+  padding: 0 0.3rem;
+  background: #c4633e;
+  color: #faf7f2;
+  font-size: 0.65rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cartButton {
+  position: relative;
   background: transparent;
   border: none;
   color: inherit;
