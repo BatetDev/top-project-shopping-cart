@@ -18,6 +18,16 @@
   margin-left: 0.25rem;
 }
 
+.cartButton {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+
 .brand {
   font-family: 'Cinzel', serif;
   font-weight: 700;
