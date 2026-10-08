@@ -5,6 +5,7 @@ import {
   FaXTwitter,
   FaYoutube,
   FaTiktok,
+  FaGithub,
 } from 'react-icons/fa6';
 import styles from './Footer.module.css';
 
@@ -14,6 +15,7 @@ const socials = [
   { name: 'X', href: 'https://x.com', Icon: FaXTwitter },
   { name: 'YouTube', href: 'https://youtube.com', Icon: FaYoutube },
   { name: 'TikTok', href: 'https://tiktok.com', Icon: FaTiktok },
+  { name: 'GitHub', href: 'https://github.com/BatetDev', Icon: FaGithub },
 ];
 
 export default function Footer() {
