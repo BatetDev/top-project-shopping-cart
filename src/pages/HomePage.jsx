@@ -17,7 +17,7 @@ export default function HomePage() {
           className={styles.heroPanel}
         >
           <img
-            src='https://images.unsplash.com/photo-1595941069915-4ebc5197c14a?auto=format&fit=crop&w=800&q=80'
+            src='https://images.unsplash.com/photo-1648447265709-67a4e785d7e2?auto=format&fit=crop&w=800&q=80'
             alt=''
           />
           <span className={styles.heroLabel}>Gear</span>
