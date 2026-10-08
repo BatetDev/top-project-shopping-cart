@@ -7,7 +7,6 @@
 
 .productCard:hover .image {
   transform: scale(1.03);
-  cursor: pointer;
 }
 
 .imageWrapper {
