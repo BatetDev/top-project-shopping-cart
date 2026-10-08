@@ -75,15 +75,19 @@ function ShopPage() {
         ))}
       </div>
 
-      <div className={styles.productGrid}>
-        {visibleProducts.map((product) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            onAddToCart={addItem}
-          />
-        ))}
-      </div>
+      {visibleProducts.length === 0 ? (
+        <p className={styles.noResults}>No products match this filter.</p>
+      ) : (
+        <div className={styles.productGrid}>
+          {visibleProducts.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              onAddToCart={addItem}
+            />
+          ))}
+        </div>
+      )}
     </main>
   );
 }
