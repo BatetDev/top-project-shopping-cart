@@ -1,7 +1,6 @@
 .productCard {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
   border: 1px solid #e3ded6;
   border-radius: 2px;
 }
@@ -48,6 +47,13 @@
 
 .addButton:hover {
   background: #003d5c;
+}
+
+.body {
+  padding: 0.75rem 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 .title {

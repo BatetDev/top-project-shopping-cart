@@ -18,8 +18,10 @@ function ProductCard({ product, onAddToCart }) {
           +
         </button>
       </div>
-      <h3 className={styles.title}>{product.title}</h3>
-      <p className={styles.price}>${product.price.toFixed(2)}</p>
+      <div className={styles.body}>
+        <h3 className={styles.title}>{product.title}</h3>
+        <p className={styles.price}>${product.price.toFixed(2)}</p>
+      </div>
     </article>
   );
 }
