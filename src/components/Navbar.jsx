@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { LuShoppingCart } from 'react-icons/lu';
 import { useCart } from '../context/useCart';
 import { useUI } from '../context/useUI';
 import styles from './Navbar.module.css';
@@ -15,8 +16,13 @@ export default function Navbar() {
       </Link>
       <div className={styles.links}>
         <Link to='/shop'>Shop</Link>
-        <button type='button' className={styles.cartButton} onClick={openCart}>
-          Cart
+        <button
+          type='button'
+          className={styles.cartButton}
+          onClick={openCart}
+          aria-label={`Cart, ${totalItems} items`}
+        >
+          <LuShoppingCart />
           {totalItems > 0 && (
             <span className={styles.cartBadge}>{totalItems}</span>
           )}
