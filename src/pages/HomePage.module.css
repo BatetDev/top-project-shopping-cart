@@ -1,21 +1,44 @@
 .hero {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
-.hero a {
-  flex: 1;
+@media (min-width: 640px) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-.hero img {
+.heroPanel {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.heroPanel img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   display: block;
-  transition: filter 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
-.hero a:hover img {
-  filter: brightness(0.85);
+.heroPanel:hover img {
+  transform: scale(1.025);
+}
+
+.heroLabel {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  color: #faf7f2;
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
 }
 
 .intro {
