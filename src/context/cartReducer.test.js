@@ -151,3 +151,18 @@ describe('DECREASE_QUANTITY', () => {
     expect(result[0].quantity).toBe(1);
   });
 });
+
+describe('CLEAR_CART', () => {
+  it('empties the cart', () => {
+    const state = [
+      { ...mockProduct, quantity: 1 },
+      { ...mockProduct2, quantity: 1 },
+    ];
+
+    const result = cartReducer(state, {
+      type: 'CLEAR_CART',
+    });
+
+    expect(result).toEqual([]);
+  });
+});
