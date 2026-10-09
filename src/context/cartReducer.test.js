@@ -17,6 +17,16 @@ const mockProduct2 = {
   stock: 3,
 };
 
+describe('unknown action', () => {
+  it('returns the state unchanged', () => {
+    const state = [{ ...mockProduct, quantity: 1 }];
+
+    const result = cartReducer(state, { type: 'UNKNOWN_ACTION' });
+
+    expect(result).toBe(state);
+  });
+});
+
 describe('ADD_ITEM', () => {
   it('adds a new product to an empty cart', () => {
     const result = cartReducer([], {
