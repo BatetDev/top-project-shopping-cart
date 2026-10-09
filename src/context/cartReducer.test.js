@@ -86,3 +86,44 @@ describe('REMOVE_ITEM', () => {
     expect(result[0].id).toBe(state[0].id);
   });
 });
+
+describe('INCREASE_QUANTITY', () => {
+  it('increments the quantity of the item with the matching id by 1', () => {
+    const state = [
+      { ...mockProduct, quantity: 1 },
+      { ...mockProduct2, quantity: 1 },
+    ];
+
+    const result = cartReducer(state, {
+      type: 'INCREASE_QUANTITY',
+      payload: 1,
+    });
+
+    expect(result[0].quantity).toBe(state[0].quantity + 1);
+  });
+
+  it('does not affect other items in the cart', () => {
+    const state = [
+      { ...mockProduct, quantity: 1 },
+      { ...mockProduct2, quantity: 1 },
+    ];
+
+    const result = cartReducer(state, {
+      type: 'INCREASE_QUANTITY',
+      payload: 1,
+    });
+
+    expect(result[1].quantity).toBe(state[1].quantity);
+  });
+
+  it('does not increment past the product stock', () => {
+    const state = [{ ...mockProduct, quantity: mockProduct.stock }];
+
+    const result = cartReducer(state, {
+      type: 'INCREASE_QUANTITY',
+      payload: 1,
+    });
+
+    expect(result[0].quantity).toBe(mockProduct.stock);
+  });
+});
