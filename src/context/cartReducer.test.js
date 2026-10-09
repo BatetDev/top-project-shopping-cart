@@ -99,7 +99,7 @@ describe('INCREASE_QUANTITY', () => {
       payload: 1,
     });
 
-    expect(result[0].quantity).toBe(state[0].quantity + 1);
+    expect(result[0].quantity).toBe(2);
   });
 
   it('does not affect other items in the cart', () => {
@@ -125,5 +125,29 @@ describe('INCREASE_QUANTITY', () => {
     });
 
     expect(result[0].quantity).toBe(mockProduct.stock);
+  });
+});
+
+describe('DECREASE_QUANTITY', () => {
+  it('decrements the quantity of the matching item by 1', () => {
+    const state = [{ ...mockProduct, quantity: 3 }];
+
+    const result = cartReducer(state, {
+      type: 'DECREASE_QUANTITY',
+      payload: 1,
+    });
+
+    expect(result[0].quantity).toBe(2);
+  });
+
+  it('does not decrement below 1', () => {
+    const state = [{ ...mockProduct, quantity: 1 }];
+
+    const result = cartReducer(state, {
+      type: 'DECREASE_QUANTITY',
+      payload: 1,
+    });
+
+    expect(result[0].quantity).toBe(1);
   });
 });
