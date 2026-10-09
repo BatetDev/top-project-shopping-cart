@@ -9,6 +9,14 @@ const mockProduct = {
   stock: 5,
 };
 
+const mockProduct2 = {
+  id: 2,
+  title: 'iPhone X',
+  price: 899,
+  thumbnail: 'https://example.com/iphonex.png',
+  stock: 3,
+};
+
 describe('ADD_ITEM', () => {
   it('adds a new product to an empty cart', () => {
     const result = cartReducer([], {
@@ -47,5 +55,34 @@ describe('ADD_ITEM', () => {
     });
 
     expect(result[0].quantity).toBe(mockProduct.stock);
+  });
+});
+
+describe('REMOVE_ITEM', () => {
+  it('removes the item with the matching id', () => {
+    const state = [
+      { ...mockProduct, quantity: 1 },
+      { ...mockProduct2, quantity: 1 },
+    ];
+
+    const result = cartReducer(state, {
+      type: 'REMOVE_ITEM',
+      payload: 1,
+    });
+
+    expect(result).toHaveLength(1);
+    expect(result[0].id).toBe(mockProduct2.id);
+  });
+
+  it('returns the state unchanged when the id is not found', () => {
+    const state = [{ ...mockProduct, quantity: 1 }];
+
+    const result = cartReducer(state, {
+      type: 'REMOVE_ITEM',
+      payload: 99,
+    });
+
+    expect(result).toHaveLength(state.length);
+    expect(result[0].id).toBe(state[0].id);
   });
 });
