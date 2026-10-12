@@ -12,6 +12,11 @@ export default function CartPage() {
     clearCart,
   } = useCart();
 
+  const total = cartItems.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0,
+  );
+
   if (cartItems.length === 0) {
     return (
       <main className={styles.cartPage}>
@@ -41,6 +46,16 @@ export default function CartPage() {
           />
         ))}
       </ul>
+
+      <div className={styles.summary}>
+        <div className={styles.totalRow}>
+          <span>Total</span>
+          <span>${total.toFixed(2)}</span>
+        </div>
+        <Link to='/checkout' className={styles.checkoutButton}>
+          Checkout
+        </Link>
+      </div>
 
       <div className={styles.cartActions}>
         <button
