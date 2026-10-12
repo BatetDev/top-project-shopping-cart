@@ -38,3 +38,10 @@ h5,
 h6 {
   font-family: 'Cinzel', serif;
 }
+
+.brand {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+}
