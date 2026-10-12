@@ -5,7 +5,7 @@
   gap: 1.5rem;
   padding: 3rem 2rem;
   margin-top: 4rem;
-  border-top: 1px solid #e3ded6;
+  border-top: 1px solid var(--border);
   text-align: center;
 }
 
@@ -13,15 +13,15 @@
   font-family: 'Cinzel', serif;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.15rem;
   font-size: 1rem;
-  color: #1f1f1f;
+  color: var(--ink);
   text-decoration: none;
 }
 
 .copyright {
   font-size: 0.75rem;
-  color: #5c5c5c;
+  color: var(--muted);
   margin: 0;
   letter-spacing: 0.03em;
 }
@@ -35,14 +35,14 @@
 }
 
 .socialLink {
-  color: #5c5c5c;
+  color: var(--muted);
   font-size: 1.125rem;
   display: flex;
   transition: color 0.2s ease;
 }
 
 .socialLink:hover {
-  color: #005780;
+  color: var(--blue);
 }
 
 .bottom {
@@ -51,7 +51,7 @@
 }
 
 .link {
-  color: #5c5c5c;
+  color: var(--muted);
   text-decoration: none;
   font-size: 0.875rem;
   letter-spacing: 0.05em;
@@ -62,6 +62,6 @@
 }
 
 .link:hover {
-  color: #005780;
-  border-bottom-color: #005780;
+  color: var(--blue);
+  border-bottom-color: var(--blue);
 }
