@@ -8,19 +8,19 @@
 .notFound h1 {
   font-size: 4rem;
   font-weight: 400;
-  color: #1f1f1f;
+  color: var(--ink);
   letter-spacing: 0.05em;
   margin: 0 0 1rem;
 }
 
 .notFound p {
-  color: #5c5c5c;
+  color: var(--muted);
   font-size: 1.125rem;
   margin: 0 0 2rem;
 }
 
 .link {
-  color: #005780;
+  color: var(--blue);
   text-decoration: none;
   font-size: 0.875rem;
   letter-spacing: 0.05em;
@@ -29,5 +29,5 @@
 }
 
 .link:hover {
-  border-bottom-color: #005780;
+  border-bottom-color: var(--blue);
 }
