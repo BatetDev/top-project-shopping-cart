@@ -7,7 +7,7 @@
 .cartPage h1 {
   font-size: 2rem;
   font-weight: 400;
-  color: #1f1f1f;
+  color: var(--ink);
   letter-spacing: 0.02em;
   line-height: 1.2;
   margin: 0 0 2rem;
@@ -32,7 +32,7 @@
 }
 
 .empty p {
-  color: #5c5c5c;
+  color: var(--muted);
   margin: 0 0 1.5rem;
 }
 
@@ -43,13 +43,13 @@
   justify-content: space-between;
   align-items: center;
   padding-top: 2rem;
-  border-top: 1px solid #e3ded6;
+  border-top: 1px solid var(--border);
 }
 
 .clearButton {
   background: transparent;
-  border: 1px solid #1f1f1f;
-  color: #1f1f1f;
+  border: 1px solid var(--ink);
+  color: var(--ink);
   padding: 0.5rem 1.25rem;
   font-family: inherit;
   font-size: 0.8rem;
@@ -62,12 +62,12 @@
 }
 
 .clearButton:hover {
-  background: #1f1f1f;
-  color: #faf7f2;
+  background: var(--ink);
+  color: var(--cream);
 }
 
 .continueLink {
-  color: #005780;
+  color: var(--blue);
   text-decoration: none;
   font-size: 0.875rem;
   letter-spacing: 0.05em;
@@ -76,5 +76,5 @@
 }
 
 .continueLink:hover {
-  border-bottom-color: #005780;
+  border-bottom-color: var(--blue);
 }
