@@ -1,12 +1,8 @@
+/* ---------- Hero ---------- */
+
 .hero {
   display: grid;
   grid-template-columns: 1fr;
-}
-
-@media (min-width: 640px) {
-  .hero {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
 .heroPanel {
@@ -41,8 +37,10 @@
   pointer-events: none;
 }
 
+/* ---------- Intro ---------- */
+
 .intro {
-  padding: 4rem 2rem;
+  padding: 1.5rem 1.5rem 3rem;
   text-align: center;
   max-width: 42rem;
   margin: 0 auto;
@@ -54,7 +52,7 @@
   color: #1f1f1f;
   letter-spacing: 0.02em;
   line-height: 1.4;
-  margin: 0 0 1.5rem;
+  margin: 0 0 1rem;
 }
 
 .cta {
@@ -76,4 +74,20 @@
 .cta:hover {
   background: #005780;
   color: #faf7f2;
+}
+
+/* ---------- Desktop enhancements ---------- */
+
+@media (min-width: 640px) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .intro {
+    padding: 4rem 2rem;
+  }
+
+  .intro h1 {
+    margin: 0 0 1.5rem;
+  }
 }
