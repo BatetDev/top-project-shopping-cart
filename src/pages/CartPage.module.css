@@ -122,3 +122,10 @@
 .checkoutButton:hover {
   background: var(--blue-dark);
 }
+
+@media (min-width: 640px) {
+  .checkoutButton {
+    align-self: flex-end;
+    max-width: 280px;
+  }
+}
