@@ -39,4 +39,66 @@ describe('CartItem', () => {
     renderCartItem();
     expect(screen.getByText('2')).toBeInTheDocument();
   });
+
+  it('calls onIncrease when the + button is clicked', async () => {
+    const handleIncrease = vi.fn();
+
+    renderCartItem({ onIncrease: handleIncrease });
+
+    const button = screen.getByRole('button', {
+      name: 'Increase quantity of iPhone 9',
+    });
+
+    await userEvent.click(button);
+
+    expect(handleIncrease).toHaveBeenCalledOnce();
+  });
+
+  it('calls onDecrease when the − button is clicked', async () => {
+    const handleDecrease = vi.fn();
+
+    renderCartItem({ onDecrease: handleDecrease });
+
+    const button = screen.getByRole('button', {
+      name: 'Decrease quantity of iPhone 9',
+    });
+
+    await userEvent.click(button);
+
+    expect(handleDecrease).toHaveBeenCalledOnce();
+  });
+
+  it('calls onRemove when the remove button is clicked', async () => {
+    const handleRemove = vi.fn();
+
+    renderCartItem({ onRemove: handleRemove });
+
+    const button = screen.getByRole('button', {
+      name: 'Remove iPhone 9 from cart',
+    });
+
+    await userEvent.click(button);
+
+    expect(handleRemove).toHaveBeenCalledOnce();
+  });
+
+  it('disables the − button when quantity is 1', () => {
+    renderCartItem({
+      item: { ...mockItem, quantity: 1 },
+    });
+
+    expect(
+      screen.getByRole('button', { name: 'Decrease quantity of iPhone 9' }),
+    ).toBeDisabled();
+  });
+
+  it('disables the + button when quantity equals stock', () => {
+    renderCartItem({
+      item: { ...mockItem, quantity: mockItem.stock },
+    });
+
+    expect(
+      screen.getByRole('button', { name: 'Increase quantity of iPhone 9' }),
+    ).toBeDisabled();
+  });
 });
