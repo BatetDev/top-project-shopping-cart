@@ -1,21 +1,27 @@
 .cartItem {
   display: grid;
-  grid-template-columns: 80px 1fr auto auto auto;
+  grid-template-columns: 64px 1fr auto;
+  grid-template-areas:
+    'thumb info remove'
+    'thumb qty  subtotal';
+  gap: 0.5rem 1rem;
   align-items: center;
-  gap: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid var(--border);
 }
 
 .thumbnail {
-  width: 80px;
-  height: 80px;
+  grid-area: thumb;
+  align-self: center;
+  width: 64px;
+  height: 64px;
   object-fit: cover;
   display: block;
   background: #fff;
 }
 
 .info {
+  grid-area: info;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
@@ -23,7 +29,7 @@
 }
 
 .title {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 400;
   color: var(--ink);
   margin: 0;
@@ -33,12 +39,14 @@
 }
 
 .unitPrice {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--muted);
   margin: 0;
 }
 
 .quantityControls {
+  grid-area: qty;
+  justify-self: start;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -74,18 +82,22 @@
 }
 
 .subtotal {
+  grid-area: subtotal;
+  justify-self: end;
   font-size: 0.95rem;
   color: var(--ink);
   margin: 0;
-  min-width: 5rem;
   text-align: right;
 }
 
 .removeButton {
+  grid-area: remove;
+  justify-self: end;
+  align-self: start;
   background: transparent;
   border: none;
   color: var(--muted);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   line-height: 1;
   cursor: pointer;
   padding: 0.25rem 0.5rem;
@@ -94,4 +106,49 @@
 
 .removeButton:hover {
   color: var(--red);
+}
+
+@media (min-width: 640px) {
+  .cartItem {
+    grid-template-columns: 80px 1fr auto auto auto;
+    grid-template-areas: none;
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .thumbnail {
+    grid-area: auto;
+    width: 80px;
+    height: 80px;
+  }
+
+  .info {
+    grid-area: auto;
+  }
+
+  .title {
+    font-size: 0.95rem;
+  }
+
+  .unitPrice {
+    font-size: 0.85rem;
+  }
+
+  .quantityControls {
+    grid-area: auto;
+    justify-self: auto;
+  }
+
+  .subtotal {
+    grid-area: auto;
+    justify-self: auto;
+    min-width: 5rem;
+  }
+
+  .removeButton {
+    grid-area: auto;
+    justify-self: auto;
+    align-self: auto;
+    font-size: 1.5rem;
+  }
 }
