@@ -7,7 +7,7 @@
 .shopPage h1 {
   font-size: 2rem;
   font-weight: 400;
-  color: #1f1f1f;
+  color: var(--ink);
   letter-spacing: 0.02em;
   line-height: 1.2;
   margin: 0 0 2rem;
@@ -28,8 +28,8 @@
 
 .filters button {
   background: transparent;
-  border: 1px solid #e3ded6;
-  color: #5c5c5c;
+  border: 1px solid var(--border);
+  color: var(--muted);
   padding: 0.5rem 0.75rem;
   font-family: inherit;
   font-size: 0.8rem;
@@ -42,19 +42,19 @@
 }
 
 .filters button:hover {
-  border-color: #005780;
-  color: #005780;
+  border-color: var(--blue);
+  color: var(--blue);
 }
 
 .filters button.active {
-  border-color: #005780;
-  color: #005780;
+  border-color: var(--blue);
+  color: var(--blue);
   background: rgba(0, 87, 128, 0.08);
 }
 
 .noResults {
   padding: 3rem 0;
   text-align: center;
-  color: #5c5c5c;
+  color: var(--muted);
   font-size: 1rem;
 }
