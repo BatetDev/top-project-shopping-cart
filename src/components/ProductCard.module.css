@@ -1,9 +1,9 @@
 .productCard {
   display: flex;
   flex-direction: column;
-  border: 1px solid #e3ded6;
+  border: 1px solid var(--border);
   border-radius: 2px;
-  background: #fdfcf9;
+  background: var(--marble);
 }
 
 .productCard:hover .image {
@@ -33,7 +33,7 @@
   height: 2.5rem;
   border-radius: 50%;
   border: none;
-  background: #005780;
+  background: var(--blue);
   color: #fff;
   font-size: 1.25rem;
   font-weight: 600;
@@ -46,7 +46,7 @@
 }
 
 .addButton:hover {
-  background: #003d5c;
+  background: var(--blue-dark);
 }
 
 .body {
@@ -60,7 +60,7 @@
   font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
-  color: #1f1f1f;
+  color: var(--ink);
   margin: 0;
   white-space: nowrap;
   overflow: hidden;
@@ -69,6 +69,6 @@
 
 .price {
   font-size: 0.9rem;
-  color: #5c5c5c;
+  color: var(--muted);
   margin: 0;
 }
